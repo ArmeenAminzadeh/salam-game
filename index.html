@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salam Matching Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .game-container {
+            margin-top: 50px;
+        }
+
+        .word-box {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px;
+            background-color: #ffcc00;
+            border: 2px solid black;
+            display: inline-block;
+            border-radius: 10px;
+        }
+
+        input {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Type-the-Word Challenge</h1>
+    <p>Type the English translation of the Persian word below:</p>
+
+    <div class="game-container">
+        <div class="word-box">سلام</div>
+        <br>
+        <input type="text" id="userInput" placeholder="Type here..." autocomplete="off">
+        <br>
+        <button onclick="checkAnswer()">Submit</button>
+        <p class="message" id="message"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const input = document.getElementById("userInput").value.trim().toLowerCase();
+            const message = document.getElementById("message");
+
+            if (input === "hello") {
+                message.textContent = "✅ Correct! 'سلام' means 'Hello'!";
+                message.style.color = "green";
+            } else {
+                message.textContent = "❌ Wrong! Try again.";
+                message.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
